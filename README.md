@@ -8,28 +8,28 @@ File structure in two models:
 1.Sign-up<br>
   -register <br>
   -log-in<br>
-  -password reset
-2.Email verification 
-3.Otp
-4.Dashboard
-5.Receiver profile
-6.Payment Model
-Extra: Profile setting 
-      :Rate us
+  -password reset<br><br>
+2.Email verification <br>
+3.Otp<br>
+4.Dashboard<br>
+5.Receiver profile<br>
+6.Payment Model<br>
+Extra: Profile setting <br>
+      :Rate us<br>
      
      
- #Receiver-process 
-1.Sign-up
-  -register 
-  -log-in
-  -password reset
-2.Email verification 
-3.Otp
-4.Dashboard
-5.Money Uproved
-6.Profile
-7.Drawing Model
-Extra: Profile setting 
-      :Rate us
+ #Receiver-process <br>
+1.Sign-up<br>
+  -register <br>
+  -log-in<br>
+  -password reset<br>
+2.Email verification <br>
+3.Otp<br>
+4.Dashboard<br>
+5.Money Uproved<br>
+6.Profile<br>
+7.Drawing Model<br>
+Extra: Profile setting <br>
+      :Rate us<br>
 
 
