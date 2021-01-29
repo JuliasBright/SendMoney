@@ -1,0 +1,144 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Payments </title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="{% static 'css/linearicons.css' %}">
+	<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+	<link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+	<link rel="stylesheet" href="{% static 'css/main.css' %}">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="{% static 'img/preloader-rubic.gif' %}"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'Login_v4/vendor/bootstrap/css/bootstrap.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'Login_v4/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'Login_v4/fonts/iconic/css/material-design-iconic-font.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'Login_v4/vendor/animate/animate.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'Login_v4/vendor/css-hamburgers/hamburgers.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'Login_v4/vendor/animsition/css/animsition.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'Login_v4/vendor/select2/select2.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'Login_v4/vendor/daterangepicker/daterangepicker.css' %}">
+<!--===================================Main CSS==================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'Login_v4/css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'Login_v4/css/main.css' %}">
+<!--===============================================================================================-->
+</head>
+<body >
+
+
+
+	<header class="default-header">
+				<div class="container">
+					<div class="header-wrap">
+						<div class="header-top d-flex justify-content-between align-items-center">
+							<div class="logo">
+								<a href="{% url 'index'%}"><img src="{% static 'img/favicon.png' %}" alt=""></a>
+							</div>
+
+							<div class="main-menubar d-flex align-items-center">
+								<nav class="hide">
+									<a href="{% url 'index'%}">About Us</a>
+									<a href="{% url 'index'%}">Services</a>
+									<!-- href="#appoinment">Appoinment</-->
+									<a href="{% url 'index'%}">Doctors</a>
+									<a href="{% url 'register' %}'">Login/Signup here</a>
+								</nav>
+								<div class="menu-bar"><span class="lnr lnr-menu"></span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+			<br>
+			<br>
+			<br>
+			<br>
+				<!-- Messages ---------------------------------------->
+{% for message in messages %}
+	<div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+  		<strong> Message: </strong> {{ message }}
+  			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    			<span aria-hidden="true">&times;</span>
+  			</button>
+	</div>
+{% endfor %}
+        <div class="limiter">
+		<!-- Page Content -->
+			<div class="content">
+				<div class="container-fluid">
+
+					<div class="row">
+						<div class="col-md-8 offset-md-2">
+                            <br>
+			                <br>
+							<!-- Account Content -->
+							<div class="account-content">
+								<div class="row align-items-center justify-content-center">
+
+                                    <div class="col-md-12 col-lg-6 login-right">
+										<div class="login-header">
+											<h3>Please confirm your email</h3>
+											<p class="small text-muted">Enter the following link to verify your email: {{mail}}</p>
+										</div>
+
+										<!-- Forgot Password Form -->
+										<form action="{% url 'otp' %}" method='post'>
+											{% csrf_token %}
+											<div class="form-group form-focus">
+											    <input type="hidden" name="email" value="{{mail}}">
+											    <input type="hidden" name="Chance" value="{{Chance}}">
+												<input type="text" class="form-control floating" name="secure">
+												<label class="focus-label">Email OTP</label>
+											</div>
+											<br>
+                                            <button class="btn btn-primary btn-block btn-lg login-btn" type="submit">verify</button>
+										    <br>
+										</form>
+										<!-- /Forgot Password Form -->
+                                    </div>
+
+								</div>
+							</div>
+							<!-- /Account Content -->
+
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+			<!-- /Page Content -->
+
+
+<!--===============================================================================================-->
+	<script src="{% static 'Login_v4/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'Login_v4/vendor/animsition/js/animsition.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'Login_v4/vendor/bootstrap/js/popper.js' %}"></script>
+	<script src="{% static 'Login_v4/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'Login_v4/vendor/select2/select2.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'Login_v4/vendor/daterangepicker/moment.min.js' %}"></script>
+	<script src="{% static 'Login_v4/vendor/daterangepicker/daterangepicker.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'Login_v4/vendor/countdowntime/countdowntime.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'Login_v4/js/main.js' %}"></script>
+
+</body>
+</html>

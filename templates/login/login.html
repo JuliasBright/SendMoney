@@ -1,0 +1,206 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Find a doctor</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="{% static 'css/linearicons.css' %}">
+	<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+	<link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+	<link rel="stylesheet" href="{% static 'css/main.css' %}">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="{% static 'img/preloader-rubic.gif' %}"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'Login_v4/vendor/bootstrap/css/bootstrap.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'Login_v4/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'Login_v4/fonts/iconic/css/material-design-iconic-font.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'Login_v4/vendor/animate/animate.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'Login_v4/vendor/css-hamburgers/hamburgers.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'Login_v4/vendor/animsition/css/animsition.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'Login_v4/vendor/select2/select2.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'Login_v4/vendor/daterangepicker/daterangepicker.css' %}">
+<!--===================================Main CSS==================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'Login_v4/css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'Login_v4/css/main.css' %}">
+<!--===============================================================================================-->
+</head>
+<body >
+
+
+	<!-- Messages ---------------------------------------->
+{% for message in messages %}
+	<div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+  		<strong> Message: </strong> {{ message }}
+  			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    			<span aria-hidden="true">&times;</span>
+  			</button>
+	</div>
+{% endfor %}
+
+
+	<header class="default-header">
+				<div class="container">
+					<div class="header-wrap">
+						<div class="header-top d-flex justify-content-between align-items-center">
+							<div class="logo">
+								<a href="{% url 'index'%}"><img src="{% static 'img/preloader-rubic.gif' %}" alt=""></a>
+							</div>
+
+							<div class="main-menubar d-flex align-items-center">
+								<nav class="hide">
+									<a href="{% url 'index'%}">About Us</a>
+									<a href="{% url 'index'%}">Services</a>
+									<!-- href="#appoinment">Appoinment</-->
+									<a href="{% url 'index'%}">Doctors</a>
+									<a href="{% url 'register' %}'">Login/Signup here</a>
+								</nav>
+								<div class="menu-bar"><span class="lnr lnr-menu"></span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+				<!-- Messages ---------------------------------------->
+{% for message in messages %}
+	<div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+  		<strong> Message: </strong> {{ message }}
+  			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    			<span aria-hidden="true">&times;</span>
+  			</button>
+	</div>
+{% endfor %}
+<body style="background-image: url({% static 'Login_v4/images/blue_background_picture_2_169441.jpg' %});">
+        <div class="limiter">
+		<div class="container-login100">
+			                            <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54"><br>
+			                            <br>
+				                            <form action="{% url 'login_patient' %}"  method="POST" class="login100-form validate-form">
+					                        {% csrf_token %}
+					<span class="login100-form-title p-b-49">
+						Login
+					</span>
+
+					<div class="wrap-input100 validate-input m-b-23" data-validate = "Username is required">
+						<span class="label-input100">Username</span>
+						<input class="input100" type="text" name="username" title="Username" placeholder="Type your username">
+						<span class="focus-input100" data-symbol="&#xf206;"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Password is required">
+						<span class="label-input100">Password</span>
+						<input class="input100" type="password" name="pass" title="Password" placeholder="Type your password">
+						<span class="focus-input100" data-symbol="&#xf190;"></span>
+					</div>
+
+                    <br>
+                    <div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<button class="btn btn-primary btn-block btn-lg login-btn login100-form-btn" name="submit" type="submit" title="Login">
+							    Login
+							    </button>
+
+
+						</div>
+					</div>
+					</form>
+
+					<div class="text-right p-t-8 p-b-31">
+						<a href="{% url 'password_forget' %}" title="Forgot Password">
+							Forgot password?
+						</a>
+						<br>
+						<span class="txt1">
+							Don't have an account?
+						</span>
+                        <br>
+						<a href="{% url 'register_patient' %}" class="txt2" title="Sign Up">
+							Sign Up
+						</a>
+					</div>
+					</div>
+					</div>
+
+<!-- ================================sign Up================================================== -->
+
+
+
+<!-- ================================Contact Us=============================================-->
+
+<!--
+	<div class="flex-col-c p-t-50">
+
+					</div>
+
+					<div class="txt1 text-center p-t-54 p-b-20">
+						<span>
+							Contact Us
+						</span>
+					</div>
+
+					<div class="flex-c-m">
+
+						<a href="#" class="login100-social-item bg1" title="Facebook">
+							<i class="fa fa-facebook"></i>
+						</a>
+
+						<a href="#" class="login100-social-item bg2" title="Tweeter">
+							<i class="fa fa-twitter"></i>
+						</a>
+
+						<a href="#" class="login100-social-item bg3" title="Gmail">
+							<i class="fa fa-google"></i>
+						</a>
+					---
+
+						<a href="https://www.instagram.com/Findadoctor_sa" class="login100-social-item bg1" title="Instagram">
+							<i class="fa fa-instagram"></i>
+						</a>
+					<!--
+						<a href="#" class="login100-social-item bg1" title="#change">
+							<i class="fa fa-facebook"></i>
+						</a>
+					-->
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="dropDownSelect1"></div>
+<!-- ================================Contact Us=============================================-->
+
+
+<!--===============================================================================================-->
+	<script src="{% static 'Login_v4/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'Login_v4/vendor/animsition/js/animsition.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'Login_v4/vendor/bootstrap/js/popper.js' %}"></script>
+	<script src="{% static 'Login_v4/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'Login_v4/vendor/select2/select2.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'Login_v4/vendor/daterangepicker/moment.min.js' %}"></script>
+	<script src="{% static 'Login_v4/vendor/daterangepicker/daterangepicker.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'Login_v4/vendor/countdowntime/countdowntime.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'Login_v4/js/main.js' %}"></script>
+
+</body>
+</html>

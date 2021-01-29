@@ -1,0 +1,211 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- doccure/forgot-password.html  30 Nov 2019 04:12:20 GMT -->
+<head>
+		<meta charset="utf-8">
+		<title>Payments </title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+
+		<!-- Favicons -->
+		<link href="{% static 'js/assets/img/favicon.png'%}" rel="icon">
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="{% static 'js/assets/css/bootstrap.min.css' %}">
+
+		<!-- Fontawesome CSS -->
+		<link rel="stylesheet" href="{% static 'js/assets/plugins/fontawesome/css/fontawesome.min.css' %}">
+		<link rel="stylesheet" href="{% static 'js/assets/plugins/fontawesome/css/all.min.css' %}">
+
+		<!-- Main CSS -->
+        <link rel="stylesheet" href="{% static 'js/assets/css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'css/linearicons.css' %}">
+        <link rel="stylesheet" href="{% static 'css/font-awesome.min.css'%}">
+        <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+        <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+
+	</head>
+	<body class="account-page">
+	    {% for message in messages %}
+	<div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+  		<strong> Message: </strong> {{ message }}
+  			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    			<span aria-hidden="true">&times;</span>
+  			</button>
+	</div>
+{% endfor %}
+
+		<!-- Main Wrapper -->
+		<div class="main-wrapper">
+
+			<!-- Header -->
+			<header class="header">
+				<nav class="navbar navbar-expand-lg header-nav">
+					<div class="navbar-header">
+
+						<a href="{% url 'index' %}" class="navbar-brand logo">
+							<img src="{% static 'js/assets/img/logo.png'%}" class="img-fluid" alt="Logo" height="100" width="100">
+						</a>
+					</div>
+					<div class="main-menu-wrapper">
+						<div class="menu-header">
+							<a href="{% url 'index' %}" class="menu-logo">
+								<img src="{% static 'js/assets/img/logo.png' %}" class="img-fluid" alt="Logo">
+							</a>
+
+						</div>
+						<ul class="main-nav">
+						</ul>
+					</div>
+					<ul class="nav header-navbar-rht">
+						<li class="nav-item contact-item">
+							<div class="header-contact-img">
+								<i class="far fa-hospital"></i>
+                            </div>
+
+						</li>
+
+					</ul>
+				</nav>
+			</header>
+			<!-- /Header -->
+
+			<!-- Page Content -->
+			<div class="content">
+				<div class="container-fluid">
+
+					<div class="row">
+						<div class="col-md-8 offset-md-2">
+
+							<!-- Account Content -->
+							<div class="account-content">
+								<div class="row align-items-center justify-content-center">
+
+									<div class="col-md-12 col-lg-6 login-right">
+										<div class="login-header">
+											<h3>Please confirm your email</h3>
+											<p class="small text-muted">Enter the following link to verify your email: {{mail}}</p>
+										</div>
+
+										<!-- Forgot Password Form -->
+										<form action="{% url 'Otp' %}" method='post'>
+											{% csrf_token %}
+											<div class="form-group form-focus">
+											    <input type="hidden" name="email" value="{{mail}}">
+											    <input type="hidden" name="Chance" value="{{Chance}}">
+												<input type="text" class="form-control floating" name="secure">
+												<label class="focus-label">Email OTP</label>
+											</div>
+                                            <button class="btn btn-primary btn-block btn-lg login-btn" type="submit">verify</button>
+										</form>
+										<!-- /Forgot Password Form -->
+
+									</div>
+								</div>
+							</div>
+							<!-- /Account Content -->
+
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+			<!-- /Page Content -->
+
+			<!-- Footer -->
+			<!-- start footer Area -->
+			<footer class="footer-area section-gap">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-2  col-md-6">
+							<div class="single-footer-widget">
+								<h6>Find a Doctor</h6>
+								<ul class="footer-nav">
+									<li><a href="{% url 'index' %}">Services</a></li>
+									<li><a href="{% url 'index' %}">Doctors</a></li>
+
+									<li><a href="{% url 'register' %}">Join us</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-lg-4  col-md-6">
+							<div class="single-footer-widget mail-chimp">
+								<h6 class="mb-20">Contact Us</h6>
+								<a href="https://www.google.com/maps/place/Century+City,+Cape+Town,+7441,+South+Africa/@-33.8964353,18.5039645,13.99z/data=!4m5!3m4!1s0x1dcc5c059c545213:0xb08b8213f2a0a7be!8m2!3d-33.8898624!4d18.5066389" targe="_blank">
+								<p>
+									Century City - 1205
+								</p>
+								</a>
+								<a href="tel:01265325689746" title="Call-Us">
+								<h3>+27 060 522 7937</h3></a>
+								</a>
+							</div>
+						</div>
+						<div class="col-lg-6  col-md-12">
+							<div class="single-footer-widget newsletter">
+								<h6>Newsletter</h6>
+								<p>You can trust us. For your Quality Healthy life.</p>
+								<div id="mc_embed_signup">
+									<form target="_blank" novalidate="true" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="form-inline">
+
+										<div class="form-group row" style="width: 100%">
+											<div class="col-lg-8 col-md-12">
+												<input name="EMAIL" placeholder="Enter Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '" required="" type="email">
+												<div style="position: absolute; left: -5000px;">
+													<input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
+												</div>
+											</div>
+
+											<div class="col-lg-4 col-md-12">
+												<button class="nw-btn primary-btn">Subscribe<span class="lnr lnr-arrow-right"></span></button>
+											</div>
+										</div>
+										<div class="info"></div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row footer-bottom d-flex justify-content-between">
+						<p class="col-lg-8 col-sm-12 footer-text m-0">
+							Copyrights 2020 Find A Doctor<br>
+							Created By <a href="https://www.juliusbright.com">Bright group</a>
+						</p>
+
+						<div class="col-lg-4 col-sm-12 footer-social">
+							<a href="https://www.instagram.com/Findadoctor_sa"><i class="fa fa-instagram"></i></a>
+
+						</div>
+					</div>
+				</div>
+			</footer>
+
+
+			<!-- /Footer -->
+
+		</div>
+		<!-- /Main Wrapper -->
+
+		<!-- jQuery -->
+		<script src="{% static 'js/assets/js/jquery.min.js' %}"></script>
+
+		<!-- Bootstrap Core JS -->
+		<script src="{% static 'js/assets/js/popper.min.js' %}"></script>
+		<script src="{% static 'js/assets/js/bootstrap.min.js' %}"></script>
+
+		<!-- Custom JS -->
+		<script src="{% static 'js/assets/js/script.js' %}"></script>
+
+	</body>
+
+
+</html>
