@@ -1,0 +1,327 @@
+{% load static %}
+
+<!DOCTYPE html>
+	<html lang="zxx" class="no-js">
+	<head>
+		<!-- Mobile Specific Meta -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Favicon-->
+		<link href="{% static 'img/preloder-rubic.gif' %}" rel="icon">
+		<!-- Author Meta -->
+		<meta name="author" content="FindaDoctor">
+		<!-- Meta Description -->
+		<meta name="description" content="">
+		<!-- Meta Keyword -->
+		<meta name="keywords" content="">
+		<!-- meta character set -->
+		<meta charset="UTF-8">
+		<!-- Site Title -->
+		<title>Payments </title>
+
+		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+			<!--
+			CSS
+			============================================= -->
+			<link rel="stylesheet" href="{% static 'css/linearicons.css' %}">
+			<!-- Fontawesome CSS -->
+			<link rel="stylesheet" href="{% static 'js/assets/plugins/fontawesome/css/fontawesome.min.css' %}">
+			<link rel="stylesheet" href="{% static 'js/assets/plugins/fontawesome/css/all.min.css' %}">
+			<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+			<link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+			<link rel="stylesheet" href="{% static 'static/nice-select.css' %}">
+			<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+			<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+			<link rel="stylesheet" href="{% static 'css/main.css' %}">
+			<link rel="stylesheet" href="{% static 'css/2059-style.css' %}">
+		</head>
+		<body>
+
+			<!-- Messages ---------------------------------------->
+{% for message in messages %}
+	<div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+  		<strong> Message: </strong> {{ message }}
+  			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    			<span aria-hidden="true">&times;</span>
+  			</button>
+	</div>
+{% endfor %}
+
+
+			<!-- Start Header Area -->
+
+			<header class="default-header">
+				<div class="container">
+					<div class="header-wrap">
+						<div class="header-top d-flex justify-content-between align-items-center">
+							<div class="logo">
+								<a href="{% url 'doctor_dashboard' %}"><img src="{% static 'img/preloder-rubic.gif' %}" alt=""></a>
+							</div>
+							<div class="main-menubar d-flex align-items-center">
+								<nav class="hide">
+
+
+									<a href="{% url 'doctor_reviews' %}">Profile</a>
+
+									<a href="{% url 'doctor_change_password' %}">Change Password</a>
+									<a href="{% url 'logout_doctor' %}">Logout</a>
+								</nav>
+								<div class="menu-bar"><span class="lnr lnr-menu"></span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+			<!-- End Header Area -->
+
+			<br>
+			<br>
+			<div class="col-md-12">
+				<div class="appointment-tab">
+					<!-- Appointment Tab -->
+
+				<!-- /Appointment Tab -->
+				<div class="tab-content">
+					<div class="tab-pane show active" id="upcoming-appointments">
+						<div class="card card-table mb-0">
+							<div class="card-body">
+							<p>Click On Calendar  To View Your Payments </p>
+							<div class="table-responsive">
+
+								<table class="table table-hover table-center mb-0">
+
+    								<th class="day-name">Sun</th>
+    								<th class="day-name">Mon</th>
+    								<th class="day-name">Tue</th>
+    								<th class="day-name">Wed</th>
+    								<th class="day-name">Thu</th>
+    								<th class="day-name">Fri</th>
+    								<th class="day-name">Sat</th>
+  								</th>
+								<tr>
+    								<td class="day"><span class="number"></span></td>
+    								<td class="day"><span class="number"></span><span class="event"></span><span class="event"></span></td>
+    								<td class="day"><span class="number"></span></td>
+    								<td class="day"><span class="number"></span><span class="event event-multiday-start"></span></td>
+    								<td class="day"><span class="number"></span><span class="event event-multiday"></span><span class="event event-multiday-start eventclass" style="background-color:#5a9ab2;"></span><span class="event"></td>
+    								<td class="day"><span class="number"></span><span class="event event-multiday-finish"></span><span class="event event-multiday eventclass" style="background-color:#5a9ab2;"></span></td>
+    								<td class="day"><span class="number">1</span><span class="event event-ghost"></span><span class="event event-multiday-finish eventclass" style="background-color:#5a9ab2;"></span></td>
+  								</tr>
+  								<tr>
+
+									<td class="day"><span class="number">2</span></td>
+    								<td class="day"><span class="number">3</span><span class="event event-multiday-start"></span></td>
+    								<td class="day"><span class="number">4</span><span class="event event-multiday"></span><span class="event event-multiday-start eventclass" style="background-color:#5a9ab2;"></span><span class="event"></td>
+    								<td class="day"><span class="number">5</span><span class="event event-multiday-finish"></span><span class="event event-multiday eventclass" style="background-color:#5a9ab2;"></span></td>
+    								<td class="day"><span class="number">6</span><span class="event event-ghost"></span><span class="event event-multiday-finish eventclass" style="background-color:#5a9ab2;"></span></td>
+									<td class="day"><span class="number">7</span></td>
+    								<td class="day"><span class="number">8</span><span class="event"></span></td>
+								</tr>
+  								<tr>
+    								<td class="day"><span class="number">9</span></td>
+    								<td class="day"><span class="number">10</span></td>
+    								<td class="day"><span class="number">11</span></td>
+    								<td class="day"><span class="number">12</span></td>
+    								<td class="day"><span class="number">13</span></td>
+									<td class="day"><span class="number">14</span></td>
+    								<td class="day"><span class="number">15</span><span class="event"></span></td>
+  								</tr>
+								<tr>
+    								<td class="day"><span class="number">16</span></td>
+    								<td class="day"><span class="number">17</span></td>
+    								<td class="day"><span class="number">18</span></td>
+    								<td class="day"><span class="number">19</span></td>
+    								<td class="day"><span class="number">20</span></td>
+									<td class="day"><span class="number">21</span></td>
+    								<td class="day"><span class="number">22</span><span class="event"></span></td>
+  								</tr>
+								</tr>
+								<tr>
+    								<td class="day"><span class="number">23</span></td>
+    								<td class="day"><span class="number">24</span></td>
+    								<td class="day"><span class="number">25</span></td>
+    								<td class="day"><span class="number">26</span></td>
+    								<td class="day"><span class="number">27</span></td>
+									<td class="day"><span class="number">28</span></td>
+    								<td class="day"><span class="number">29</span><span class="event"></span></td>
+
+
+  								</tr>
+								<tr>
+									<td class="day"><span class="number">30</span></td>
+									<td class="day"><span class="number">31</span></td>
+								</tr>
+
+  								<style>
+								  	body { margin: 0; }
+
+									table { width: 100%; box-sizing: border-box; box-shadow: inset 0px 0px 0px 1px rgba(0,0,0,0.1); font-family: 'Ubuntu'; /border-collapse: collapse;/ border-spacing: 0; background-color: #333333; }
+
+									th, td { border: 1px solid rgba(255,255,255,0.1); box-sizing: border-box; }
+									.day:hover { background-color: rgba(0,0,0,0.1); cursor:pointer; }
+
+									.today { color: #FFF; background-color: rgba(0,0,0,.25) !important; }
+
+									span.number { margin-left: 10% }
+
+									span.event { height: 4px; background-color: rgba(0,0,0,.3); display: block; margin: 5px 10%; border-radius: 2px; background-color: #91c33b; }
+
+									span.event-multiday { margin: 5px -2px; border-radius: 0; }
+									span.event-multiday-start { margin-right: -4px;  }
+									span.event-multiday-finish { margin-left: -4px;  }
+
+									span.event-ghost { background-color:transparent;
+									/*
+										th { text-transform: uppercase; font-size:10px; font-weight:700; padding: 10px 0; color: rgba(255,255,255,0.5); background-color: black; letter-spacing: 1px; }
+
+										td { width: 14.285%; transition: all 0.3s; font-size: 14px; color: rgba(255,255,255,0.6); font-weight: 400; font-size: 14px; padding: 1.5% 1.5% 5%; vertical-align: initial; padding: 1.5% 0 ; height: 75px; }
+
+
+
+
+									*/
+
+								</style>
+
+
+
+
+
+									</table>
+								</div>
+							</div>
+						</div>
+
+						{%  for patient in patients %}
+					<div class="tab-pane show active" id="history">
+						<div class="card card-table mb-0">
+							<div class="card-body">
+								<div class="table-responsive">
+									<h2>Upcoming Bookings</h2>
+									<table class="table table-hover table-center mb-0">
+										<thead>
+											<tr>
+												<th> Name</th>
+
+												<th>adress</th>
+
+
+
+
+											</tr>
+										</thead>
+
+									<tbody>
+										<tr>
+											<td>
+												<h2>
+													{{patient.first_name}} {{patient.last_name}}
+												</h2>
+											</td>
+
+											<td>
+												<h2>
+													{{patient.address | slice:"0:12"}}...
+												</h2>
+											</td>
+
+
+
+
+										</tr>
+									</tbody>
+								</table>
+
+							</div>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+				<!-- /Upcoming Appointment Tab -->
+
+
+			<script src="{% static 'js/vendor/jquery-2.2.4.min.js' %}"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+			<script src="{% static 'js/vendor/bootstrap.min.js' %}"></script>
+			<script src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>
+			<script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
+			<script src="{% static 'js/jquery.sticky.js' %}"></script>
+			<script src="{% static 'js/parallax.min.js' %}"></script>
+			<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+			<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+			<script src="{% static 'js/waypoints.min.js' %}"></script>
+			<script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+			<script src="{% static 'js/main.js' %}"></script>
+			<script>
+				$(document).ready(function() {
+
+					$('#calendar').fullCalendar({
+						header: {
+						left: 'prev,next today',
+						center: 'title',
+						right: 'month,basicWeek,basicDay'
+					},
+					defaultDate: '2016-12-12',
+					navLinks: true, // can click day/week names to navigate views
+					editable: true,
+					eventLimit: true, // allow "more" link when too many events
+					events: [
+						{
+						title: 'All Day Event',
+						start: '2016-12-01'
+						},
+					{
+						title: 'Long Event',
+						start: '2016-12-07',
+						end: '2016-12-10'
+					},
+					{
+						id: 999,
+						title: 'Repeating Event',
+						start: '2016-12-09T16:00:00'
+					},
+					{
+						id: 999,
+						title: 'Repeating Event',
+						start: '2016-12-16T16:00:00'
+					},
+					{
+						title: 'Conference',
+						start: '2016-12-11',
+						end: '2016-12-13'
+					},
+					{
+						title: 'Meeting',
+						start: '2016-12-12T10:30:00',
+						end: '2016-12-12T12:30:00'
+					},
+					{
+						title: 'Lunch',
+						start: '2016-12-12T12:00:00'
+					},
+					{
+						title: 'Meeting',
+						start: '2016-12-12T14:30:00'
+					},
+					{
+						title: 'Happy Hour',
+						start: '2016-12-12T17:30:00'
+					},
+					{
+						title: 'Dinner',
+						start: '2016-12-12T20:00:00'
+					},
+					{
+						title: 'Birthday Party',
+						start: '2016-12-13T07:00:00'
+					},
+					{
+						title: 'Click for Google',
+						url: 'https://google.com/',
+						start: '2016-12-28'
+					}
+				]});});
+			</script>
+		</body>
+	</html>
+

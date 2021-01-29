@@ -1,0 +1,259 @@
+{% load static %}
+
+<!DOCTYPE html>
+	<html lang="zxx" class="no-js">
+	<head>
+		<!-- Mobile Specific Meta -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Favicon-->
+		<link href="{% static 'img/preloader-rubic.gif' %}" rel="icon">
+		<!-- Author Meta -->
+		<meta name="author" content="FindaDoctor">
+		<!-- Meta Description -->
+		<meta name="description" content="">
+		<!-- Meta Keyword -->
+		<meta name="keywords" content="">
+		<!-- meta character set -->
+		<meta charset="UTF-8">
+		<!-- Site Title -->
+		<title>Payments</title>
+
+		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+			<!--
+			CSS
+			============================================= -->
+			<link rel="stylesheet" href="{% static 'css/linearicons.css' %}">
+			<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+			<link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+            <link rel="stylesheet" href="{% static 'css/2059-style.css' %}">
+			<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+			<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+			<link rel="stylesheet" href="{% static 'css/main.css' %}">
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400&display=swap');
+
+.wrapper112 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100wh;
+  box-sizing: border-box;
+  margin-top: 40px;
+}
+
+.wrapper112 > h4 {
+  position: relative;
+  z-index: 5;
+}
+
+.container1123 {
+  position: relative;
+  display: flex;
+
+  top: 70px;
+  justify-content: center ;
+  height: 200px;
+  width: 400px;
+  border-radius: 15px;
+background: #f2f2ff;
+box-shadow:  10px 10px 20px rgba(0, 0, 0, 0.07),
+             -10px -10px 20px rgba(255, 255, 255, 0.8);
+  z-index: 1;
+}
+
+
+.container1123::after {
+  position: absolute;
+  top: 0;
+  left: 0px;
+  content: '';
+  display: block;
+  height: 150px;
+  width: 170px;
+  border-radius: 5px;
+background: #f2f2ff;
+box-shadow: inset 2px 2px 11px #e5e5e5,
+            inset -5px -5px 11px #ffffff;
+  z-index: 1;
+  top: calc(50% - 25px);
+  left: calc(50% - 170px);
+  transition: all 0.4s cubic-bezier(1, 0.04, 0.66, 1.23);
+}
+
+.cash-selected {
+  animation: pressed-left 0.4s cubic-bezier(1, 0.04, 0.66, 1.23);
+}
+
+.card-selected {
+  animation: pressed-right 0.4s cubic-bezier(1, 0.04, 0.66, 1.23);
+}
+
+.cash-selected::after {
+  left: calc(50% - 170px);
+}
+
+.card-selected::after {
+  left: calc(50% - 0px);
+}
+
+label {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+/*   border: 1px solid red; */
+  width: 50%;
+  cursor: pointer;
+  height: 100%;
+  z-index: 2;
+}
+
+/* label::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  display: none;
+  height: 50px;
+  width: 170px;
+  border-radius: 5px;
+background: #f2f2ff;
+box-shadow: inset 2px 2px 11px #e5e5e5,
+            inset -5px -5px 11px #ffffff;
+  z-index: 1;
+  top: calc(50% - 25px);
+  left: calc(50% - 85px);
+} */
+
+span {
+  position: relative;
+  z-index: 2;
+}
+
+input {
+  display: none;
+}
+
+input:checked + label {
+  color: #2180e1;
+}
+
+input:checked + label::after {
+  display: block;
+}
+
+@keyframes pressed-left {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(0.98, 0.98);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes pressed-right {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(0.98, 0.98);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+</style>
+
+		</head>
+
+		<body>
+
+			<!-- Messages ---------------------------------------->
+{% for message in messages %}
+	<div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+  		<strong> Message: </strong> {{ message }}
+  			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    			<span aria-hidden="true">&times;</span>
+  			</button>
+	</div>
+{% endfor %}
+
+
+			<!-- Start Header Area -->
+
+			<header class="default-header">
+				<div class="container">
+					<div class="header-wrap">
+						<div class="header-top d-flex justify-content-between align-items-center">
+							<div class="logo">
+								<a href="#home"><img src="{% static 'img/preloader-rubic.gif' %}" alt=""></a>
+							</div>
+
+
+
+							<div class="main-menubar d-flex align-items-center">
+								<nav class="hide">
+                                    	<a href="#home">Home</a>
+
+									<a href="{% url 'register' %}">Login/Signup here</a>
+								</nav>
+								<div class="menu-bar"><span class="lnr lnr-menu"></span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header><br>
+
+<div class="container1123 flex-grow d-flex justify-content-between align-items-center" id="home">
+    <input type="radio" id="cash" value="cash" name="payement-mode" onchange="setPaymentMode('cash')" checked />
+  <label for="cash">
+      <a href="{% url 'register' %}">
+      <span>
+        <i class="fa fa-money-bill mr-1"></i> Cash</span></a>
+  </label>
+
+    <input type="radio" name="payement-mode" id="card" value="card"onchange="setPaymentMode('card')"  />
+  <label for="card">
+      <a href="{% url 'register' %}">
+    <span>
+      <i class="fa fa-money-check mr-1"></i> Credit Card</span></a>
+  </label>
+</div>
+  </div>
+			<script src="{% static 'js/vendor/jquery-2.2.4.min.js' %}"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+			<script src="{% static 'js/vendor/bootstrap.min.js' %}"></script>
+			<script src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>
+            <script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
+			<script src="{% static 'js/jquery.sticky.js' %}"></script>
+			<script src="{% static 'js/parallax.min.js' %}"></script>
+			<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+			<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+			<script src="{% static 'js/waypoints.min.js' %}"></script>
+			<script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+			<script src="{% static 'js/main.js' %}"></script>
+<script>
+var container = document.querySelector('.container');
+
+function setPaymentMode(mode){
+  if(mode === 'cash'){
+    container.classList.add('cash-selected');
+    container.classList.remove('card-selected');
+  } else {
+    container.classList.add('card-selected');
+    container.classList.remove('cash-selected');
+  }
+}
+</script>
+
+
+
+		</body>
+	</html>

@@ -1,0 +1,377 @@
+{% load static %}
+
+<!DOCTYPE html>
+	<html lang="zxx" class="no-js">
+	<head>
+		<!-- Mobile Specific Meta -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Favicon-->
+		<link href="{% static 'img/preloader-rubic.gif' %}" rel="icon">
+		<!-- Author Meta -->
+		<meta name="author" content="FindaDoctor">
+		<!-- Meta Description -->
+		<meta name="description" content="">
+		<!-- Meta Keyword -->
+		<meta name="keywords" content="">
+		<!-- meta character set -->
+		<meta charset="UTF-8">
+		<!-- Site Title -->
+		<title>Payments </title>
+
+		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+			<!--
+			CSS
+			============================================= -->
+			<link rel="stylesheet" href="{% static 'css/linearicons.css' %}">
+			<!-- Fontawesome CSS -->
+			<link rel="stylesheet" href="{% static 'js/assets/plugins/fontawesome/css/fontawesome.min.css' %}">
+			<link rel="stylesheet" href="{% static 'js/assets/plugins/fontawesome/css/all.min.css' %}">
+			<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+			<link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+			<link rel="stylesheet" href="{% static 'static/nice-select.css' %}">
+			<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+			<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+			<link rel="stylesheet" href="{% static 'css/main.css' %}">
+            <link rel="stylesheet" href="{% static 'css/2059-style.css' %}">
+
+	<!-- FullCalendar -->
+			<link rel="stylesheet" href="{% static 'css1/fullcalendar.min.css' %}">
+  			<link rel="stylesheet" href="{% static 'css1/fullcalendar.css' %}">
+  			<style>
+.transition, p, ul li i:before, ul li i:after {
+  transition: all 0.25s ease-in-out;
+}
+
+.flipIn, h1, ul li {
+  animation: flipdown 0.5s ease both;
+}
+
+.no-select, h2 {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+h1, h2 {
+  color: #ff6873;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-size: 36px;
+  line-height: 42px;
+  letter-spacing: 3px;
+  font-weight: 100;
+}
+
+h2 {
+  font-size: 26px;
+  line-height: 34px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  display: block;
+  background-color: #fefffa;
+  margin: 0;
+  cursor: pointer;
+}
+
+p {
+  color: rgba(48, 69, 92, 0.8);
+  font-size: 17px;
+  line-height: 26px;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  max-height: 800px;
+  opacity: 1;
+  transform: translate(0, 0);
+  margin-top: 14px;
+  z-index: 2;
+}
+
+ul {
+  list-style: none;
+  perspective: 900;
+  padding: 0;
+  margin: 0;
+}
+ul li {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  padding-bottom: 4px;
+  padding-top: 18px;
+  border-top: 1px
+}
+ul li:nth-of-type(1) {
+  animation-delay: 0.5s;
+}
+ul li:nth-of-type(2) {
+  animation-delay: 0.75s;
+}
+ul li:nth-of-type(3) {
+  animation-delay: 1s;
+}
+ul li:last-of-type {
+  padding-bottom: 0;
+}
+ul li i {
+  position: absolute;
+  transform: translate(-6px, 0);
+  margin-top: 16px;
+  right: 0;
+}
+ul li i:before, ul li i:after {
+  content: "";
+  position: absolute;
+  background-color: #ff6873;
+  width: 3px;
+  height: 9px;
+}
+ul li i:before {
+  transform: translate(-2px, 0) rotate(45deg);
+}
+ul li i:after {
+  transform: translate(2px, 0) rotate(-45deg);
+}
+ul li input[type=checkbox] {
+  position: absolute;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+}
+ul li input[type=checkbox]:checked ~ p {
+  margin-top: 0;
+  max-height: 0;
+  opacity: 0;
+  transform: translate(0, 50%);
+}
+ul li input[type=checkbox]:checked ~ i:before {
+  transform: translate(2px, 0) rotate(45deg);
+}
+ul li input[type=checkbox]:checked ~ i:after {
+  transform: translate(-2px, 0) rotate(-45deg);
+}
+
+@keyframes flipdown {
+  0% {
+    opacity: 0;
+    transform-origin: top center;
+    transform: rotateX(-90deg);
+  }
+  5% {
+    opacity: 1;
+  }
+  80% {
+    transform: rotateX(8deg);
+  }
+  83% {
+    transform: rotateX(6deg);
+  }
+  92% {
+    transform: rotateX(-3deg);
+  }
+  100% {
+    transform-origin: top center;
+    transform: rotateX(0deg);
+  }
+}
+
+		</style>
+  	</head>
+		<body>
+
+			<!-- Messages ---------------------------------------->
+{% for message in messages %}
+	<div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+  		<strong> Message: </strong> {{ message }}
+  			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    			<span aria-hidden="true">&times;</span>
+  			</button>
+	</div>
+{% endfor %}
+
+			<!-- Start Header Area -->
+
+			<header class="default-header">
+				<div class="container">
+					<div class="header-wrap">
+						<div class="header-top d-flex justify-content-between align-items-center">
+							<div class="logo">
+								<a href="{% url 'index' %}"><img src="{% static 'img/preloader-rubic.gif' %}" alt=""></a>
+							</div>
+							<div class="main-menubar d-flex align-items-center">
+								<nav class="hide">
+
+
+									<a href="{% url 'patient_dashboard' %}">Dashboard</a>
+									<a href="{% url 'profile_setting' %}">Profile</a>
+
+									<a href="{% url 'patient_payment' %}">Payments</a>
+									<a href="{% url 'logout_patient' %}">Logout</a>
+								</nav>
+								<div class="menu-bar"><span class="lnr lnr-menu"></span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+
+				<div class="row">
+					<div class="col-md-12">
+
+						<div class="appointment-tab">
+
+							<!-- Appointment Tab -->
+							<ul class="nav nav-tabs nav-tabs-solid nav-tabs-rounded">
+								<br>
+								<li class="nav-item">
+
+
+								</li>
+									<li class="nav-item">
+
+									<a class="nav-link " href="patient_profile.html" data-toggle="tab"></a>
+								</li>
+								<li class="nav-item">
+
+									<img src="{{user.image.url}}" alt="" height="25" width="25">
+									<span></span>Booking<span></span><span></span>
+
+								</li>
+							</ul>
+
+						</div>
+						</div>
+						</div>
+						    <form action="{% url 'booking_success' %}" method="post" enctype="multipart/form-data">
+									        {% csrf_token %}
+                               <h1>Paying made easy with us.</h1>
+                               <p>Please follow these 3 steps to get your Doctor.</p>
+                               <ul>
+                                 <li>
+                                   <h2>Paying  information</h2>
+
+									       <div class="form-group">
+									           <label for="description" class="col-sm-2">Description</label>
+									                <div class="col-sm-10">
+										                <input type="text" name="description" class="form-control" id="description" placeholder="Description">
+								                	</div>
+								            </div>
+								            <div class="form-group">
+									            <label for="title" class="col-sm-2 control-label">Conditon</label>
+									                <div class="col-sm-10">
+										                <input type="text" name="title" class="form-control" id="title" placeholder="Medical condition" required>
+									                </div>
+								            </div>
+								            <div class="form-group">
+									            <label for="description" class="col-sm-2 control-label">Symtoms</label>
+									                <div class="col-sm-10">
+										                <input type="text" name="Symptoms" class="form-control" id="Symptoms" placeholder="Symptoms" required>
+									                </div>
+								            </div>
+                                </li>
+                                <li>
+                                   <h2>Date and Time</h2>
+    								       <div class="form-group" >
+								                <p></p>Please Select Your time availability</p>
+                                                <br>
+                                                <label class="focus-label">Date </label>
+												<input type="date" name="dob" class="form-control floating" required>
+                                                <br>
+                                                <label class="focus-label">Time Available</label>
+												<input type="time" name="start_time" class="form-control floating" required>
+
+
+								            </div>
+
+  								   </li>
+  								   <li>
+         	   	   	  	   	    	   <input type="checkbox" checked>
+     								    <i></i>
+     								    <h2>Choose a Doctor </h2>
+     								    <div required>
+												<input type="radio" id="male" name="gender" value="male">
+												<label for="doctor"> available </label>
+													{% for doctor in doctors %}
+
+											<div class="table-responsive">
+												<table class="table table-hover table-center mb-0">
+
+
+													<thead>
+														<!--h3> Booking informations </!--h3-->
+
+
+
+														<tr>
+															<th> Name</th>
+															<th>Time</th>
+															<img src="{{ doctor.image.url }}" alt="" height="25" width="25" align="right">
+
+														</tr>
+													</thead>
+														<tr>
+															<td>
+																<a href="{% url 'patient_dashboard' %}">
+																<h2>
+
+																	{{doctor.first_name}} {{doctor.last_name}}
+																	<small align="right"><i class="far fa-thumbs-up" ><small> 99%</small></i>
+
+																</h2>
+																</a>
+															</td>
+															<td>
+															    <a href="{% url 'patient_dashboard' %}">
+																{{doctor.date}}
+																</a>
+															</td>
+
+
+														</tr>
+													</tbody>
+												</table>
+
+											</div>
+										</div>
+									</div>
+
+									{% endfor %}
+											</div>
+  								       								   </li>
+  							</ul>
+  							<div class="modal-footer">
+
+									            <button type="button" class="btn btn-default" ><a href="{% url 'patient_dashboard'%}">Close</button></a>
+									            <button type="submit" class="btn btn-primary">Submit</button>
+								            </div>
+								        </form>
+            </div>
+            </div>
+            </div>
+
+			<!-- End footer Area -->
+<script src="{% static 'js/vendor/jquery-2.2.4.min.js' %}"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+			<script src="{% static 'js/vendor/bootstrap.min.js' %}"></script>
+			<script src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>
+<script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
+			<script src="{% static 'js/jquery.sticky.js' %}"></script>
+			<script src="{% static 'js/parallax.min.js' %}"></script>
+			<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+			<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+			<script src="{% static 'js/waypoints.min.js' %}"></script>
+			<script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+			<script src="{% static 'js/main.js' %}"></script>
+
+			<script>
+
+			</script>
