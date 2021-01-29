@@ -5,9 +5,9 @@
 File structure in two models:
 
 #Payer-Process 
-1.Sign-up
-  -register 
-  -log-in
+1.Sign-up<br>
+  -register <br>
+  -log-in<br>
   -password reset
 2.Email verification 
 3.Otp
