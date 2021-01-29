@@ -1,10 +1,10 @@
 # SendMoney
 
 
-#File Structure 
+# File Structure 
 File structure in two models:
 
-#Payer-Process 
+# Payer-Process 
 1.Sign-up<br>
   -register <br>
   -log-in<br>
@@ -18,7 +18,7 @@ Extra: Profile setting <br>
       :Rate us<br>
      
      
- #Receiver-process <br>
+ # Receiver-process <br>
 1.Sign-up<br>
   -register <br>
   -log-in<br>
